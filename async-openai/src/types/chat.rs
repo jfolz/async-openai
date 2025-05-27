@@ -816,6 +816,10 @@ pub struct CreateChatCompletionRequest {
     #[deprecated]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub functions: Option<Vec<ChatCompletionFunctions>>,
+
+    /// Explicitly enable/disable thinking mode for Qwen3
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub enable_thinking: Option<bool>, // nullable: true
 }
 
 /// Options for streaming response. Only set this when you set `stream: true`.
