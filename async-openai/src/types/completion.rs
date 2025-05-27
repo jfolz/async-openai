@@ -113,6 +113,10 @@ pub struct CreateCompletionRequest {
     /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub seed: Option<i64>,
+
+    /// Explicitly enable/disable thinking mode for Qwen3
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub enable_thinking: Option<bool>, // nullable: true
 }
 
 #[derive(Debug, Deserialize, Clone, PartialEq, Serialize)]
